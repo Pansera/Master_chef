@@ -43,6 +43,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AbstractCuisine.cs" />
+    <Compile Include="Model\AElement.cs" />
+    <Compile Include="Model\ALaver.cs" />
+    <Compile Include="Model\APlat.cs" />
+    <Compile Include="Model\APostMobile.cs" />
+    <Compile Include="Model\ChambreFroide.cs" />
+    <Compile Include="Model\ChefPartie.cs" />
+    <Compile Include="Model\Commis.cs" />
+    <Compile Include="Model\Congelateur.cs" />
+    <Compile Include="Model\Denrees.cs" />
+    <Compile Include="Model\Element.cs" />
+    <Compile Include="Model\Evier.cs" />
+    <Compile Include="Model\Four.cs" />
+    <Compile Include="Model\Frigo.cs" />
+    <Compile Include="Model\IchefCuisineFactory.cs" />
+    <Compile Include="Model\ICuisine.cs" />
+    <Compile Include="Model\IIlngredient.cs" />
+    <Compile Include="Model\IPostFixe.cs" />
+    <Compile Include="Model\IStock.cs" />
+    <Compile Include="Model\ITypeElement.cs" />
+    <Compile Include="Model\LaveVaisselle.cs" />
+    <Compile Include="Model\MachineLaver.cs" />
+    <Compile Include="Model\NonALaver.cs" />
+    <Compile Include="Model\Plongeur.cs" />
+    <Compile Include="Model\PostMobile.cs" />
+    <Compile Include="Model\Recette.cs" />
+    <Compile Include="Model\UstensileBDD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,7 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controler\" />
-    <Folder Include="Model\" />
     <Folder Include="Observer\" />
     <Folder Include="View\" />
   </ItemGroup>
