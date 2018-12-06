@@ -43,16 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="D:\Document\Code\C#\Projet Master Chef\Program.cs">
-      <Link>Program.cs</Link>
-    </Compile>
+    <Compile Include="Controller\SocketServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
     <Folder Include="Model\" />
     <Folder Include="Observer\" />
     <Folder Include="View\" />

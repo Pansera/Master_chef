@@ -1,0 +1,7 @@
+C:\Users\webpi\Documents\Kraken\Master_chef\Restaurant\Salle\bin\Debug\Salle.exe.config
+C:\Users\webpi\Documents\Kraken\Master_chef\Restaurant\Salle\bin\Debug\Salle.exe
+C:\Users\webpi\Documents\Kraken\Master_chef\Restaurant\Salle\bin\Debug\Salle.pdb
+C:\Users\webpi\Documents\Kraken\Master_chef\Restaurant\Salle\obj\Debug\Salle.csprojAssemblyReference.cache
+C:\Users\webpi\Documents\Kraken\Master_chef\Restaurant\Salle\obj\Debug\Salle.csproj.CoreCompileInputs.cache
+C:\Users\webpi\Documents\Kraken\Master_chef\Restaurant\Salle\obj\Debug\Salle.exe
+C:\Users\webpi\Documents\Kraken\Master_chef\Restaurant\Salle\obj\Debug\Salle.pdb
