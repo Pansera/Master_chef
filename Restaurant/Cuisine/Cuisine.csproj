@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controler\Client.cs" />
+    <Compile Include="Controler\Communication.cs" />
+    <Compile Include="Controler\EnvoiePlat.cs" />
+    <Compile Include="Controler\ReceptionCommande.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -50,7 +54,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controler\" />
     <Folder Include="Model\" />
     <Folder Include="Observer\" />
     <Folder Include="View\" />
