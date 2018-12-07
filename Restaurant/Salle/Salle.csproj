@@ -46,6 +46,23 @@
     <Compile Include="D:\Document\Code\C#\Projet Master Chef\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
+    <Compile Include="Model\AfficherArgent.cs" />
+    <Compile Include="Model\CaisseEnregistreuse.cs" />
+    <Compile Include="Model\Carte.cs" />
+    <Compile Include="Model\ChefRang.cs" />
+    <Compile Include="Model\ClientConcret.cs" />
+    <Compile Include="Model\Commande.cs" />
+    <Compile Include="Model\CommisSalle.cs" />
+    <Compile Include="Model\Createur.cs" />
+    <Compile Include="Model\CreateurConcret.cs" />
+    <Compile Include="Model\IClient.cs" />
+    <Compile Include="Model\IObservable.cs" />
+    <Compile Include="Model\IObservateur.cs" />
+    <Compile Include="Model\MaitreHotel.cs" />
+    <Compile Include="Model\Personne.cs" />
+    <Compile Include="Model\Program.cs" />
+    <Compile Include="Model\Serveur.cs" />
+    <Compile Include="Model\Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,7 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="Model\" />
     <Folder Include="Observer\" />
     <Folder Include="View\" />
   </ItemGroup>

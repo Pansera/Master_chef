@@ -1,0 +1,7 @@
+C:\Users\Arthur Wolff Exia\Documents\GitHub\Master_chef\Restaurant\Cuisine\bin\Debug\Cuisine.exe.config
+C:\Users\Arthur Wolff Exia\Documents\GitHub\Master_chef\Restaurant\Cuisine\bin\Debug\Cuisine.exe
+C:\Users\Arthur Wolff Exia\Documents\GitHub\Master_chef\Restaurant\Cuisine\bin\Debug\Cuisine.pdb
+C:\Users\Arthur Wolff Exia\Documents\GitHub\Master_chef\Restaurant\Cuisine\obj\Debug\Cuisine.csprojAssemblyReference.cache
+C:\Users\Arthur Wolff Exia\Documents\GitHub\Master_chef\Restaurant\Cuisine\obj\Debug\Cuisine.csproj.CoreCompileInputs.cache
+C:\Users\Arthur Wolff Exia\Documents\GitHub\Master_chef\Restaurant\Cuisine\obj\Debug\Cuisine.exe
+C:\Users\Arthur Wolff Exia\Documents\GitHub\Master_chef\Restaurant\Cuisine\obj\Debug\Cuisine.pdb

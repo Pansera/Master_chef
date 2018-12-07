@@ -8,6 +8,9 @@ namespace Salle
 {
     class ChefRang
     {
+        public MaitreHotel MH;
+        public bool appel;
+
         public AccompagneClient()
         {
 
@@ -27,7 +30,11 @@ namespace Salle
         }
         public attendAppel()
         {
-
+            appel = MH.AppelIChefRang()
+            if(appel = true)
+            {
+                AccompagneClient();
+            }
         }
 
     }

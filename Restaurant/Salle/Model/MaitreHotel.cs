@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Salle
 {
-    class MaitreHotel
+    sealed class MaitreHotel
     {
         private string nom;
         private string prenom;
-        private readonly MaitreHotel UniqueInstance;
+        //private readonly MaitreHotel UniqueInstance;
         public ClientConcret CL;
         private int check;
+        private static MaitreHotel instance = null;
+        private static readonly object padlock = new object();
 
         public int CheckClient()
         {
@@ -23,6 +25,7 @@ namespace Salle
 
         public AppelIChefRang()
         {
+            
 
         }
 
@@ -46,15 +49,25 @@ namespace Salle
 
         }
 
-        private MaitreHotel()
+        MaitreHotel()
         {
 
         }
 
-        public MaitreHotel GetInstance()
+        public static MaitreHotel GetInstance()
         {
-
+            lock (padlock)
+            {
+                    if (instance == null)
+                    {
+                        instance = new MaitreHotel();
+                    }
+                    return instance;
+            }
+            
         }
+
+    }
 
     }
 }
