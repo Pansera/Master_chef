@@ -11,11 +11,11 @@ namespace Salle.Controller
 {
     public class StateObject
     {
-        // Client  socket.  
+        // Socket du client.  
         public Socket workSocket = null;
-        // Size of receive buffer.  
+        // Taille du buffer qui recoit les messages.  
         public const int BufferSize = 1024;
-        // Receive buffer.  
+        // Buffer qui recevera les messages.  
         public byte[] buffer = new byte[BufferSize];
         // Received data string.  
         public StringBuilder sb = new StringBuilder();
@@ -23,19 +23,20 @@ namespace Salle.Controller
 
     public class AsynchronousSocketListener
     {
-        // Thread signal.  
+        // allDone permet de libérer les threads manuellement.  
         public static ManualResetEvent allDone = new ManualResetEvent(false);
 
+        //Constructeur
         public AsynchronousSocketListener()
         {
         }
 
         public static void StartListening()
         {
-            // Establish the local endpoint for the socket.  
-            // The DNS name of the computer  
-            // running the listener is "host.contoso.com".  
+            // IPHostEntry contient les info d'adresse DNS de mon ordi local  
             IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
+
+            // Affiche l'IP locale
             string localIP = "";
             foreach (IPAddress ip in ipHostInfo.AddressList)
             {
@@ -43,31 +44,38 @@ namespace Salle.Controller
                     localIP = ip.ToString();
             }
             Console.WriteLine("Votre adresse IP: " + localIP);
+
             IPAddress ipAddress = ipHostInfo.AddressList[0];
+
+            //Création d'un nouveau point d'accès avec l'adresse IP local + numéro de port 11000
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
 
-            // Create a TCP/IP socket.  
+            // Création de socket TCP
             Socket listener = new Socket(ipAddress.AddressFamily,
                 SocketType.Stream, ProtocolType.Tcp);
 
-            // Bind the socket to the local endpoint and listen for incoming connections.  
+    
+            // Lie le socket listener au point d'accès local et écoute les connection entrante
             try
             {
                 listener.Bind(localEndPoint);
+                // Socket en état d'écoute
+                // 100 représente le nombre maximale de connection en attente
                 listener.Listen(100);
 
                 while (true)
                 {
-                    // Set the event to nonsignaled state.  
+                    // le MRE se met en false
                     allDone.Reset();
 
-                    // Start an asynchronous socket to listen for connections.  
+                    // Début de l'opération asynchrone d'écoute
                     Console.WriteLine("Waiting for a connection...");
+                    // AsyncCallback est le délégué qui référence l'opération asynchrone qui se termine
                     listener.BeginAccept(
                         new AsyncCallback(AcceptCallback),
                         listener);
 
-                    // Wait until a connection is made before continuing.  
+                    // Thread se bloque jusqu'à qu'il y ai une connection
                     allDone.WaitOne();
                 }
 
@@ -84,53 +92,53 @@ namespace Salle.Controller
 
         public static void AcceptCallback(IAsyncResult ar)
         {
-            // Signal the main thread to continue.  
+            // Termine le thread
             allDone.Set();
 
-            // Get the socket that handles the client request.  
+            // Récupère le Socket qui prend en charge les requêtes clients
             Socket listener = (Socket)ar.AsyncState;
             Socket handler = listener.EndAccept(ar);
 
-            // Create the state object.  
+            // Création de l'objet StateObject
             StateObject state = new StateObject();
             state.workSocket = handler;
+            //Réception de données de manière asynchrone par le socket handler
             handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
                 new AsyncCallback(ReadCallback), state);
         }
 
+        // Lecture des données
         public static void ReadCallback(IAsyncResult ar)
         {
             String content = String.Empty;
 
-            // Retrieve the state object and the handler socket  
-            // from the asynchronous state object.  
+            // Retourne le state object et le socket handler du State Object asynchrone
             StateObject state = (StateObject)ar.AsyncState;
             Socket handler = state.workSocket;
 
-            // Read data from the client socket.   
+            // Lit les données du socket client
             int bytesRead = handler.EndReceive(ar);
 
             if (bytesRead > 0)
             {
-                // There  might be more data, so store the data received so far.  
+                // Stockage des données recu
                 state.sb.Append(Encoding.ASCII.GetString(
                     state.buffer, 0, bytesRead));
 
-                // Check for end-of-file tag. If it is not there, read   
-                // more data.  
+                // Vérification d'un End Of File
                 content = state.sb.ToString();
                 if (content.IndexOf("<EOF>") > -1)
                 {
-                    // All the data has been read from the   
-                    // client. Display it on the console.  
+                    // Toutes les données ont été lues, ont les affiche
+                  
                     Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
                         content.Length, content);
-                    // Echo the data back to the client.  
+                    // Envoie des données aux clients
                     Send(handler, content);
                 }
                 else
                 {
-                    // Not all data received. Get more.  
+                    // Dans le cas ou toutes les données n'ont pas été recues 
                     handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
                     new AsyncCallback(ReadCallback), state);
                 }
@@ -139,10 +147,10 @@ namespace Salle.Controller
 
         private static void Send(Socket handler, String data)
         {
-            // Convert the string data to byte data using ASCII encoding.  
+            // Conversion des données en bytedata
             byte[] byteData = Encoding.ASCII.GetBytes(data);
 
-            // Begin sending the data to the remote device.  
+            // Envoie des données aux clients distants
             handler.BeginSend(byteData, 0, byteData.Length, 0,
                 new AsyncCallback(SendCallback), handler);
         }
@@ -151,10 +159,10 @@ namespace Salle.Controller
         {
             try
             {
-                // Retrieve the socket from the state object.  
+                //Retourne le socket du state object
                 Socket handler = (Socket)ar.AsyncState;
 
-                // Complete sending the data to the remote device.  
+                // Fini d'envoyer des données aux clients distants
                 int bytesSent = handler.EndSend(ar);
                 Console.WriteLine("Sent {0} bytes to client.", bytesSent);
 
