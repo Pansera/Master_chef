@@ -11,9 +11,13 @@ namespace Salle
         private string nom;
         private string prenom;
         private readonly MaitreHotel UniqueInstance;
+        public ClientConcret CL;
+        private int check;
 
-        public CheckClient()
+        public int CheckClient()
         {
+            check = CL.Arriver();
+            return check;
 
         }
 
@@ -29,6 +33,11 @@ namespace Salle
 
         public AttribueTable()
         {
+            int var = CheckClient();
+            if(var < 1)
+            {
+                var = 0;
+            }
 
         }
         
