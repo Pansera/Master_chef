@@ -8,9 +8,9 @@ namespace Salle
 {
     interface IClient
     {
-        public Commander();
+        /*public Commander();
         public Payer();
         public Manger();
-        public Assoir();
+        public Assoir();*/
     }
 }

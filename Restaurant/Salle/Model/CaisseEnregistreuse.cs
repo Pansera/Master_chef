@@ -9,7 +9,7 @@ namespace Salle
     class CaisseEnregistreuse
     {
 
-        private int argent()
+        /*private int argent()
         {
 
         }
@@ -17,7 +17,7 @@ namespace Salle
         public prendArgent()
         {
 
-        }
+        }*/
 
 }
 }

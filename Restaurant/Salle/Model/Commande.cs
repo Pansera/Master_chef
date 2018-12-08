@@ -12,9 +12,9 @@ namespace Salle
         private string nomMenu;
         private int prix;
 
-        public Commande(string nom, int prix)
+        /*public Commande(string nom, int prix)
         {
 
-        }
+        }*/
     }
 }

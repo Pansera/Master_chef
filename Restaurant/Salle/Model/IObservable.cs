@@ -9,7 +9,7 @@ namespace Salle
     interface IObservable
     {
 
-        public inscritObserveur()
+        /*public inscritObserveur()
         {
 
         }
@@ -22,7 +22,7 @@ namespace Salle
         public notify()
         {
 
-        }
+        }*/
 
     }
 }

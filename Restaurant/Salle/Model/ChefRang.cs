@@ -10,7 +10,7 @@ namespace Salle
     {
         public MaitreHotel MH;
         public bool appel;
-
+        /*
         public AccompagneClient()
         {
 
@@ -27,7 +27,7 @@ namespace Salle
         public transmetCommande()
         {
 
-        }
+        }*/
         public attendAppel()
         {
             appel = MH.AppelIChefRang()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Salle
 {
-    sealed class MaitreHotel
+    class MaitreHotel
     {
         private string nom;
         private string prenom;
@@ -15,32 +15,54 @@ namespace Salle
         private int check;
         private static MaitreHotel instance = null;
         private static readonly object padlock = new object();
+        private bool tabledispo;
 
-        public int CheckClient()
+        public void CheckClient()
         {
             check = CL.Arriver();
-            return check;
+            if(check < 0)
+            {
+                //this.VerifieTableDisponible(check);
+            }
+            else
+            {
+                check = 0;
+            }
 
         }
 
-        public AppelIChefRang()
+        public void AppelIChefRang()
         {
             
 
         }
-
-        public VerifieTableDisponible()
+        /*
+        public  VerifieTableDisponible(int check)
         {
+            if(check > 4)
+            {
+                tablex - check
+                tabledispo = true
+                this.AttribueTable(tabledispo)
+            }
+            else if (4 < check < 8)
+            {
+                tabley - check;
+                tabledispo = true
+                this.AttribueTable(tabledispo)
+            }
+            else{
+                tabledispo = false
+                this.AttribueTable(tabledispo)
+                
+            }
+            
 
         }
 
-        public AttribueTable()
+        public AttribueTable(tabledispo)
         {
-            int var = CheckClient();
-            if(var < 1)
-            {
-                var = 0;
-            }
+            
 
         }
         
@@ -48,6 +70,11 @@ namespace Salle
         {
 
         }
+        public void PlusDePlace()
+        {
+            int partir = CL.Arriver()
+            partir = 0;
+        }*/
 
         MaitreHotel()
         {
@@ -69,5 +96,5 @@ namespace Salle
 
     }
 
-    }
 }
+

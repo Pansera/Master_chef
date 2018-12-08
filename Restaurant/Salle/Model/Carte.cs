@@ -11,10 +11,10 @@ namespace Salle
         private int nbCarteRestaurant;
         private string[] collectionMenu;
 
-        public Carte()
+        /*public Carte()
         {
 
-        }
+        }*/
 
 
 

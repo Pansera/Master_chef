@@ -8,7 +8,7 @@ namespace Salle
 {
     class AfficherArgent
     {
-        private etatObservateur;
+        //private etatObservateur;
 
 
     }

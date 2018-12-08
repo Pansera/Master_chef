@@ -9,7 +9,7 @@ namespace Salle
     class CommisSalle
     {
 
-        public metlaTable()
+        /*public metlaTable()
         {
 
         }
@@ -17,7 +17,7 @@ namespace Salle
         public sertPainetEau()
         {
 
-        }
+        }*/
 
     }
 }

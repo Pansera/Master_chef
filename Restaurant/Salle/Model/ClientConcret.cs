@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Salle
 {
-    class ClientConcret : IClient
+    public class ClientConcret : IClient
     {
         private bool reservation;
         private bool presser;
@@ -41,7 +41,7 @@ namespace Salle
                 return NbPersonne;
             
         }
-        public int Payer()
+        /*public int Payer()
         {
 
         }
@@ -58,10 +58,6 @@ namespace Salle
         public Assoir()
         {
 
-        }
-        public ClientConcret()
-        {
-
-        }
+        }*/
     }
 }

@@ -9,7 +9,7 @@ namespace Salle
     class Serveur
     {
 
-        private int numCarre()
+        /*private int numCarre()
         {
 
         }
@@ -27,7 +27,7 @@ namespace Salle
         public Table debarasse()
         {
 
-        }
+        }*/
 
     }
 }

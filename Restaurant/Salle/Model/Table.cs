@@ -9,7 +9,7 @@ namespace Salle
     class Table
     {
 
-        private bool estOccupe()
+        /*private bool estOccupe()
         {
 
         }
@@ -69,7 +69,7 @@ namespace Salle
         public getOc()
         {
 
-        }
+        }*/
 
     }
 }

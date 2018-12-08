@@ -1,4 +1,2 @@
 C:\Users\Arthur Wolff Exia\Documents\GitHub\Master_chef\Restaurant\Salle\obj\Debug\Salle.csprojAssemblyReference.cache
 C:\Users\Arthur Wolff Exia\Documents\GitHub\Master_chef\Restaurant\Salle\obj\Debug\Salle.csproj.CoreCompileInputs.cache
-C:\Users\Arthur Wolff Exia\Desktop\Master_chef\Restaurant\Salle\obj\Debug\Salle.csprojAssemblyReference.cache
-C:\Users\Arthur Wolff Exia\Desktop\Master_chef\Restaurant\Salle\obj\Debug\Salle.csproj.CoreCompileInputs.cache

@@ -8,8 +8,8 @@ namespace Salle
 {
     interface IObservateur
     {
-        public notify()
+        /*public notify()
         {
-        }
+        }*/
     }
 }
