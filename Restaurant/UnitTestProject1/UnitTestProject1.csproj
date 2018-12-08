@@ -55,6 +55,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cuisine\Cuisine.csproj">
+      <Project>{88671203-1c59-4c58-99ef-f36408cbdf79}</Project>
+      <Name>Cuisine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Salle\Salle.csproj">
+      <Project>{58733176-6263-4dd2-a5c0-1678659b580b}</Project>
+      <Name>Salle</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

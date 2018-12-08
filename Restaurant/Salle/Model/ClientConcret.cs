@@ -59,5 +59,9 @@ namespace Salle
         {
 
         }
+        public ClientConcret()
+        {
+
+        }
     }
 }
