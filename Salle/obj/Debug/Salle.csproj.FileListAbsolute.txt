@@ -1,0 +1,7 @@
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Salle\bin\Debug\Salle.exe.config
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Salle\bin\Debug\Salle.exe
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Salle\bin\Debug\Salle.pdb
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Salle\obj\Debug\Salle.csprojAssemblyReference.cache
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Salle\obj\Debug\Salle.csproj.CoreCompileInputs.cache
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Salle\obj\Debug\Salle.exe
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Salle\obj\Debug\Salle.pdb

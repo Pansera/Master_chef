@@ -1,2 +1,0 @@
-C:\Users\Arthur Wolff Exia\Desktop\Master_chef\Restaurant\UnitTestProject1\obj\Debug\UnitTestProject1.csprojAssemblyReference.cache
-C:\Users\Arthur Wolff Exia\Desktop\Master_chef\Restaurant\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CoreCompileInputs.cache
