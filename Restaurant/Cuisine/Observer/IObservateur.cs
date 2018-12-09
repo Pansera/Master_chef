@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cuisine.Controler
+namespace Cuisine.Observer
 {
-    class Communication
+    interface IObservateur
     {
+        void Notifier();
     }
 }
