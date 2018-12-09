@@ -8,32 +8,45 @@ namespace Salle
 {
     class Table
     {
+        private int id;
+        private int nbPlace;
+        //private int nbPlaceOccupe;
+        private bool pain;
+        private bool eau;
 
-        private bool estOccupe()
+        public int Id { get => id; set => id = value; }
+        public int NbPlace { get => nbPlace; set => nbPlace = value; }
+        public bool Pain { get => pain; set => pain = value; }
+        public bool Eau { get => eau; set => eau = value; }
+
+        public Table()
         {
+            List<Table> tables = new List<Table>
+            {
+                new Table {  Id = 0, NbPlace = 4, Eau = false, Pain = false},
+                new Table {  Id = 1, NbPlace = 4, Eau = false, Pain = false},
+                new Table {  Id = 2, NbPlace = 4, Eau = false, Pain = false},
+                new Table {  Id = 3, NbPlace = 4, Eau = false, Pain = false},
+                new Table {  Id = 4, NbPlace = 4, Eau = false, Pain = false},
+                new Table {  Id = 5, NbPlace = 4, Eau = false, Pain = false},
+                new Table {  Id = 6, NbPlace = 4, Eau = false, Pain = false},
+                new Table {  Id = 7, NbPlace = 4, Eau = false, Pain = false},
+                new Table {  Id = 8, NbPlace = 4, Eau = false, Pain = false},
+                new Table {  Id = 9, NbPlace = 4, Eau = false, Pain = false},
+                new Table {  Id = 10, NbPlace = 4, Eau = false, Pain = false},
+                new Table {  Id = 11, NbPlace = 8, Eau = false, Pain = false},
+                new Table {  Id = 12, NbPlace = 8, Eau = false, Pain = false},
+                new Table {  Id = 13, NbPlace = 8, Eau = false, Pain = false},
+            }
+
 
         }
 
-        private int id()
+        /*private bool estOccupe()
         {
 
         }
         
-        private int nbPlace()
-        {
-
-        }
-
-        private int nbPlaceOccupe()
-        {
-
-        }
-
-        private bool pain()
-        {
-
-        }
-
         private bool eau()
         {
 
@@ -69,7 +82,7 @@ namespace Salle
         public getOc()
         {
 
-        }
+        }*/
 
     }
 }
