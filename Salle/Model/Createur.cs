@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Salle
 {
-    class Program
+    public class Createur
     {
-        static void Main(string[] args)
+
+        public int FactoryMethod()
         {
-            
-            
+            return 1;
         }
+
     }
 }

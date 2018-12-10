@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F9D27D49-F8F9-4477-AFEA-0F152454B422}</ProjectGuid>
+    <ProjectGuid>{C061E93D-161C-411A-ABB9-B2FD52B5759E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Cuisine</RootNamespace>
     <AssemblyName>Cuisine</AssemblyName>
@@ -43,39 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NewFolder1\AbstractCuisine.cs" />
-    <Compile Include="NewFolder1\AElement.cs" />
-    <Compile Include="NewFolder1\ALaver.cs" />
-    <Compile Include="NewFolder1\APlat.cs" />
-    <Compile Include="NewFolder1\APostMobile.cs" />
-    <Compile Include="NewFolder1\ChambreFroide.cs" />
-    <Compile Include="NewFolder1\ChefPartie.cs" />
-    <Compile Include="NewFolder1\Commis.cs" />
-    <Compile Include="NewFolder1\Congelateur.cs" />
-    <Compile Include="NewFolder1\Denrees.cs" />
-    <Compile Include="NewFolder1\Element.cs" />
-    <Compile Include="NewFolder1\Evier.cs" />
-    <Compile Include="NewFolder1\Four.cs" />
-    <Compile Include="NewFolder1\Frigo.cs" />
-    <Compile Include="NewFolder1\IchefCuisineFactory.cs" />
-    <Compile Include="NewFolder1\ICuisine.cs" />
-    <Compile Include="NewFolder1\IIlngredient.cs" />
-    <Compile Include="NewFolder1\IPostFixe.cs" />
-    <Compile Include="NewFolder1\IStock.cs" />
-    <Compile Include="NewFolder1\ITypeElement.cs" />
-    <Compile Include="NewFolder1\LaveVaisselle.cs" />
-    <Compile Include="NewFolder1\MachineLaver.cs" />
-    <Compile Include="NewFolder1\NonALaver.cs" />
-    <Compile Include="NewFolder1\Plongeur.cs" />
-    <Compile Include="NewFolder1\PostMobile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NewFolder1\Recette.cs" />
-    <Compile Include="NewFolder1\UstensileBDD.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
