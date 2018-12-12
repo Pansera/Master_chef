@@ -4,6 +4,7 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Salle.Model;
 
 namespace Salle
 {
@@ -17,25 +18,17 @@ namespace Salle
 
         public bool Eau { get; set; }
 
-        
+        public bool Tabledispo { get; set; }
 
-        public object Table4p()
+        public ListTable LTB = new ListTable();
+
+        public List<Table> Quatre;
+
+        public List<Table> Huit;
+
+        public override string ToString()
         {
-            List<Table> tables4p = new List<Table>();
-            for (int i = 0; i < 10; i++)
-            {
-                tables4p.Add(new Table() { Id = i, nbPlace = 4, Eau = false, Pain = false });
-            }
-            return tables4p;
-        }
-        public object Table8p()
-        {
-            List<Table> tables8p = new List<Table>();
-            for (int i = 0; i < 3; i++)
-            {
-                tables8p.Add(new Table() { Id = i, nbPlace = 8, Eau = false, Pain = false });
-            }
-            return tables8p;
+            return "ID: " + Id + "   Nombre de place: " + nbPlace + "    Pain = " + Pain + "    Eau = " + Eau + "    Table dispo = " + Tabledispo;
         }
 
 
@@ -45,7 +38,17 @@ namespace Salle
 
         }
 
-     
+        public List<Table> GetTable4()
+        {
+            Quatre = LTB.Table4p();
+            return Quatre;
+        }
+        public List<Table> GetTable8()
+        {
+            Huit = LTB.Table8p();
+            return Huit;
+        }
+
 
         /*
         

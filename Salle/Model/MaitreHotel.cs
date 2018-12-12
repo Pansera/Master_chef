@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Salle.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,13 +14,16 @@ namespace Salle
         //private readonly MaitreHotel UniqueInstance;
         public ClientConcret CL;
         public int check;
+        public int resetClient;
         private static MaitreHotel instance = null;
         private static readonly object padlock = new object();
         private bool tabledispo;
-        private object tables8;
-        private object tables4;
-        public Table TB;
+        private ChefRang CR = new ChefRang();
 
+        public Table TB;
+        public ListTable place = new ListTable();
+
+        
 
         public void CheckClient(int check)
         {
@@ -29,38 +33,42 @@ namespace Salle
             {
                this.VerifieTableDisponible(check);
             }
-            
-
         }
 
-        public void AppelIChefRang(bool tabledispo, int check)
+        public void AppelIChefRang(List<Table> test, int check)
         {
-            
-
+            Table reserver = test.Where(i => i.Tabledispo == true).First();
+            var index = test.IndexOf(reserver);
+            test[index] = new Table() { Tabledispo = false };
+            resetClient = CL.Arriver();
+            resetClient = 0;
+            CR.AccompagneClient(test, check);
+           
         }
         
         public void VerifieTableDisponible(int check)
         {
-                    
             if(check <= 4)
             {
-                tables4 = TB.Table4p();
-               // int exiawin = .FindIndex(p => p.nbPlace <= 4);
-                //Console.WriteLine(exiawin);
-                tabledispo = true;
-                    this.AppelIChefRang(tabledispo, check)
-            }
-            else if (check < 8)
-            {
-                table8 = TB.Table8p();
-                tabley - check;
-                tabledispo = true
-                this.AppelIChefRang(tabledispo, check)
-            }
-            else{
-                tabledispo = false
-                this.AppelIChefRang(tabledispo)
-                
+                List<Table> test = TB.GetTable4();
+                int exiawin = test.FindIndex(p => p.Tabledispo == true);
+                if (exiawin == 0)
+                {
+                    this.AppelIChefRang(test, check);
+                }
+                else
+                {
+                    List<Table> test2 = TB.GetTable8();
+                    int exiawin2 = test2.FindIndex(p => p.Tabledispo == true);
+                    if (exiawin2 == 0)
+                    {
+                        this.AppelIChefRang(test2, check);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Navrée Monsieur, nous avons plus de place.");
+                    }
+                }
             }
             
 

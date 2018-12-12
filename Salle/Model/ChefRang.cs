@@ -10,16 +10,12 @@ namespace Salle
     {
         public MaitreHotel MH;
         public bool appel;
+        
+        public void AccompagneClient(List<Table> reserver, int check )
+        {
+
+        }
         /*
-        public AccompagneClient()
-        {
-
-        }
-
-        public Dressetable()
-        {
-
-        }
         public presentCarte()
         {
 

@@ -55,6 +55,7 @@
     <Compile Include="Model\IClient.cs" />
     <Compile Include="Model\IObservable.cs" />
     <Compile Include="Model\IObservateur.cs" />
+    <Compile Include="Model\ListTable.cs" />
     <Compile Include="Model\MaitreHotel.cs" />
     <Compile Include="Model\Personne.cs" />
     <Compile Include="Model\Serveur.cs" />
