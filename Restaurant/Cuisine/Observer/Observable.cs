@@ -71,6 +71,10 @@ namespace Cuisine.Observer
         {
             receiveDone.WaitOne();
         }
+        public static void ResetReceive()
+        {
+            receiveDone.Reset();
+        }
 
         public static void OnConnect()
         {

@@ -11,7 +11,7 @@ namespace Cuisine.Controler
 {
     class ReceptionCommande
     {
-       
+
         // ManualResetEvent instances signal completion.  
 
         private Socket client;
@@ -21,8 +21,10 @@ namespace Cuisine.Controler
 
         public ReceptionCommande(Socket client)
         {
+            Observable.ResetReceive();
             Console.WriteLine("Reciving");
             this.client = client;
+
             Thread newThread = new Thread(new ThreadStart(this.Receive));
             newThread.Start();
         }
@@ -34,13 +36,14 @@ namespace Cuisine.Controler
             try
             {
 
+
                 // Create the state object.  
                 Observable state = new Observable();
                 state.workSocket = client;
 
                 // Begin receiving the data from the remote device.  
                 client.BeginReceive(state.buffer, 0, Observable.BufferSize, 0,
-                    new AsyncCallback(ReceiveCallback), state);
+                    new AsyncCallback(ReadCallback), state);
             }
             catch (Exception e)
             {
@@ -48,46 +51,46 @@ namespace Cuisine.Controler
             }
         }
 
-        private static void ReceiveCallback(IAsyncResult ar)
+
+        public static void ReadCallback(IAsyncResult ar)
         {
-            try
+            String content = String.Empty;
+
+            // Retrieve the state object and the handler socket  
+            // from the asynchronous state object.  
+            Observable state = (Observable)ar.AsyncState;
+            Socket handler = state.workSocket;
+
+            // Read data from the client socket.   
+            int bytesRead = handler.EndReceive(ar);
+
+            if (bytesRead > 0)
             {
-                // Retrieve the state object and the client socket   
-                // from the asynchronous state object.  
-                Observable state = (Observable)ar.AsyncState;
-                Socket client = state.workSocket;
+                // There  might be more data, so store the data received so far.  
+                state.sb.Append(Encoding.ASCII.GetString(
+                    state.buffer, 0, bytesRead));
 
-                // Read data from the remote device.  
-                int bytesRead = client.EndReceive(ar);
-
-                if (bytesRead > 0)
+                // Check for end-of-file tag. If it is not there, read   
+                // more data.  
+                content = state.sb.ToString();
+                if (content.IndexOf(".") > -1)
                 {
-                    // There might be more data, so store the data received so far.  
-                    state.sb.Append(Encoding.ASCII.GetString(state.buffer, 0, bytesRead));
+                    // All the data has been read from the   
+                    // client. Display it on the console.  
+                    Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
+                        content.Length, content);
 
-                    // Get the rest of the data.  
-                    client.BeginReceive(state.buffer, 0, Observable.BufferSize, 0,
-                        new AsyncCallback(ReceiveCallback), state);
+                    // Echo the data back to the client.  
+                    Observable.OnReceive();
+                    //Send(handler, content);
                 }
                 else
                 {
-                    // All the data has arrived; put it in response.  
-                    if (state.sb.Length > 1)
-                    {
-                        response = state.sb.ToString();
-                    }
-                    // Signal that all bytes have been received.  
-                    Observable.OnReceive();
-
-                    // Write the response to the console.  
-                    Console.WriteLine("Response received : {0}", response);
+                    // Not all data received. Get more.  
+                    handler.BeginReceive(state.buffer, 0, Observable.BufferSize, 0,
+                    new AsyncCallback(ReadCallback), state);
                 }
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
         }
-        
     }
 }

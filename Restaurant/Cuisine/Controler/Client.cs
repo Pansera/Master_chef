@@ -15,14 +15,12 @@ namespace Cuisine.Controler
     {
         private const int port = 11000;
         public static Thread t1, t2;
-        private String data;
 
+        public static Socket client = null;
 
-        public Client(String data)
+        public Client()
         {
-            this.data = data;
-
-            Thread newThread = new Thread(new ThreadStart(this.StartClient));
+            Thread newThread = new Thread(new ThreadStart(StartClient));
             newThread.Start();
         }
 
@@ -41,28 +39,15 @@ namespace Cuisine.Controler
 
 
                 // Create a TCP/IP socket.  
-                Socket client = new Socket(ipAddress.AddressFamily,
+                client = new Socket(ipAddress.AddressFamily,
                     SocketType.Stream, ProtocolType.Tcp);
+
 
                 // Connect to the remote endpoint.  
                 client.BeginConnect(remoteEP,
                     new AsyncCallback(ConnectCallback), client);
                 Observable.WaitConnect();
 
-                // Send data to the kitchen.  
-                t1 = new Thread(() => new EnvoiePlat(client, data));
-                t1.Start();
-                Observable.WaitSend();
-
-                // Receive the data from the kitchen.  
-                t2 = new Thread(() => new ReceptionCommande(client));
-                t2.Start();
-                Observable.WaitReceive();
-
-
-                // Release the socket.  
-                client.Shutdown(SocketShutdown.Both);
-                client.Close();
 
             }
             catch (Exception e)
@@ -93,6 +78,29 @@ namespace Cuisine.Controler
                 Console.WriteLine(e.ToString());
             }
         }
+
+        public void Send(string data)
+        {
+            Observable.WaitConnect();
+            // Send test data to the remote device.  
+            t1 = new Thread(() => new EnvoiePlat(client, data));
+            t1.Start();
+            Observable.WaitSend();
+
+        }
+
+        public void Receive()
+        {
+            Observer.Observable.WaitConnect();
+            Observable.ResetReceive();
+            // Receive the response from the remote device. 
+            t2 = new Thread(() => new ReceptionCommande(client));
+            t2.Start();
+            Observable.WaitReceive();
+        }
+
+
+
 
     }
 }
