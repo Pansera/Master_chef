@@ -6,46 +6,27 @@ using System.Threading.Tasks;
 
 namespace Salle
 {
-    class Table
+    public class Table
     {
+        public int nbPlace { get; set; }
 
-        private bool estOccupe()
-        {
+        public int Id { get; set; }
 
-        }
+        public bool Pain { get; set; }
 
-        private int id()
+        public bool Eau { get; set; }
+
+
+        /*private bool estOccupe()
         {
 
         }
         
-        private int nbPlace()
-        {
-
-        }
-
-        private int nbPlaceOccupe()
-        {
-
-        }
-
-        private bool pain()
-        {
-
-        }
-
-        private bool eau()
-        {
-
-        }
-
         private Point position()
         {
 
         }
-
-
-
+                
         public getPosition()
         {
 
@@ -69,7 +50,7 @@ namespace Salle
         public getOc()
         {
 
-        }
+        }*/
 
     }
 }
