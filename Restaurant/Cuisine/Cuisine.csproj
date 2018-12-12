@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Observer\IObservateur.cs" />
+    <Compile Include="Observer\Observable.cs" />
     <Compile Include="Model\AbstractCuisine.cs" />
     <Compile Include="Model\AElement.cs" />
     <Compile Include="Model\ALaver.cs" />
@@ -70,6 +72,9 @@
     <Compile Include="Model\PostMobile.cs" />
     <Compile Include="Model\Recette.cs" />
     <Compile Include="Model\UstensileBDD.cs" />
+    <Compile Include="Controler\Client.cs" />
+    <Compile Include="Controler\EnvoiePlat.cs" />
+    <Compile Include="Controler\ReceptionCommande.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,8 +82,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controler\" />
-    <Folder Include="Observer\" />
     <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
