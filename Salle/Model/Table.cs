@@ -20,6 +20,8 @@ namespace Salle
 
         public bool Tabledispo { get; set; }
 
+        public bool Tableservie { get; set; };
+
         public ListTable LTB = new ListTable();
 
         public List<Table> Quatre;
@@ -28,7 +30,7 @@ namespace Salle
 
         public override string ToString()
         {
-            return "ID: " + Id + "   Nombre de place: " + nbPlace + "    Pain = " + Pain + "    Eau = " + Eau + "    Table dispo = " + Tabledispo;
+            return "ID: " + Id + "   Nombre de place: " + nbPlace + "    Pain = " + Pain + "    Eau = " + Eau + "    Table dispo = " + Tabledispo+"      Table servie = "+ Tableservie;
         }
 
 

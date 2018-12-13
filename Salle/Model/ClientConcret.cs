@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Salle
 {
@@ -13,6 +14,14 @@ namespace Salle
         private int nbPersonne;
         private int presence;
         private int groupe;
+        private Serveur SV ;
+
+        public ClientConcret()
+        {
+            Thread abc = new Thread(() => Manger());
+            abc.Start();
+            abc.Abort();
+        }
 
         public int NbPersonne { get => nbPersonne; set => nbPersonne = value; }
         public int Presence { get => presence; set => presence = value; }
@@ -41,23 +50,27 @@ namespace Salle
                 return NbPersonne;
             
         }
+        public int Commander()
+        {
+            Random rnd = new Random();
+            int recette = rnd.Next(0, 10);
+            return recette;
+        }
+
+        public void Manger()
+        {
+            Thread.Sleep(2400000);
+            SV.Débarasser();
+
+        }
         /*public int Payer()
         {
 
         }
-        public Commander()
-        {
+        
 
-        }
+        
 
-        public Manger()
-        {
-
-        }
-
-        public Assoir()
-        {
-
-        }*/
+        */
     }
 }

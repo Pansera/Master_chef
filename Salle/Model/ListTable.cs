@@ -16,7 +16,7 @@ namespace Salle.Model
         {
             for (int i = 0; i < 10; i++)
             {
-                tables4p.Add(new Table() { Id = i, nbPlace = 4, Eau = false, Pain = false, Tabledispo = true });
+                tables4p.Add(new Table() { Id = i, nbPlace = 4, Eau = false, Pain = false, Tabledispo = true, Tableservie = true });
             }
             return tables4p;
 
@@ -26,7 +26,7 @@ namespace Salle.Model
 
             for (int i = 0; i < 3; i++)
             {
-                tables8p.Add(new Table() { Id = i, nbPlace = 8, Eau = false, Pain = false, Tabledispo = true });
+                tables8p.Add(new Table() { Id = i, nbPlace = 8, Eau = false, Pain = false, Tabledispo = true, Tableservie = true });
             }
             return tables8p;
         }

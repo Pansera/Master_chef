@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Salle
@@ -18,12 +19,19 @@ namespace Salle
         private static MaitreHotel instance = null;
         private static readonly object padlock = new object();
         private bool tabledispo;
-        private ChefRang CR = new ChefRang();
+        private static Semaphore _pool;
+        private bool CR1dispo = true;
+        private bool CR2dispo = true;
+
+
+
+        public int placeRestante;
 
         public Table TB;
         public ListTable place = new ListTable();
 
-        
+        public bool CR1 { get => CR1dispo; set => CR1dispo = value; }
+        public bool CR2 { get => CR2dispo; set => CR2dispo = value; }
 
         public void CheckClient(int check)
         {
@@ -38,12 +46,36 @@ namespace Salle
         public void AppelIChefRang(List<Table> test, int check)
         {
             Table reserver = test.Where(i => i.Tabledispo == true).First();
-            var index = test.IndexOf(reserver);
-            test[index] = new Table() { Tabledispo = false };
+            var idTable = test.IndexOf(reserver);
+            if(check < 4)
+            {
+                placeRestante = 4 - check;
+            }
+            else
+            {
+                placeRestante = 8 - check;
+            }
+            test[idTable] = new Table() { Tabledispo = false };
+            test[idTable] = new Table() { nbPlace = placeRestante };
             resetClient = CL.Arriver();
             resetClient = 0;
-            CR.AccompagneClient(test, check);
-           
+            //CR.(test, check);
+            //_pool = new Semaphore(0, 2);
+            if(CR1dispo == true)
+            {
+                CR1 = false;
+                ChefRang a = new ChefRang(idTable, check);
+                CR1 = true;
+            }
+            else
+            {
+                CR2 = false;
+                ChefRang a = new ChefRang(idTable, check);
+                CR2 = true;
+            }
+            
+            //_pool.Release();
+
         }
         
         public void VerifieTableDisponible(int check)
@@ -73,23 +105,6 @@ namespace Salle
             
 
         }
-        /*
-        public AttribueTable(tabledispo)
-        {
-            
-
-        }
-        
-        public int GetPosition()
-        {
-
-        }
-        public void PlusDePlace()
-        {
-            int partir = CL.Arriver()
-            partir = 0;
-        }*/
-
         public MaitreHotel()
         {
 
