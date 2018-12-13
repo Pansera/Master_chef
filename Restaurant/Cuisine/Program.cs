@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cuisine.Model;
 
 namespace Cuisine
 {
@@ -10,6 +11,7 @@ namespace Cuisine
     {
         static void Main(string[] args)
         {
+            InitBDD.InitializeDatabase();
         }
     }
 }

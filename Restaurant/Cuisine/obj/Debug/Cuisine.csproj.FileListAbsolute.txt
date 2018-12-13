@@ -1,0 +1,7 @@
+C:\Users\Vince\Documents\aaa\Master_chef\Restaurant\Cuisine\obj\Debug\Cuisine.csprojAssemblyReference.cache
+C:\Users\Vince\Documents\aaa\Master_chef\Restaurant\Cuisine\obj\Debug\Cuisine.csproj.CoreCompileInputs.cache
+C:\Users\Vince\Documents\aaa\Master_chef\Restaurant\Cuisine\bin\Debug\Cuisine.exe.config
+C:\Users\Vince\Documents\aaa\Master_chef\Restaurant\Cuisine\bin\Debug\Cuisine.exe
+C:\Users\Vince\Documents\aaa\Master_chef\Restaurant\Cuisine\bin\Debug\Cuisine.pdb
+C:\Users\Vince\Documents\aaa\Master_chef\Restaurant\Cuisine\obj\Debug\Cuisine.exe
+C:\Users\Vince\Documents\aaa\Master_chef\Restaurant\Cuisine\obj\Debug\Cuisine.pdb

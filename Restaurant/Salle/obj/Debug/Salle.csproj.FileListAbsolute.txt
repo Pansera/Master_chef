@@ -1,0 +1,2 @@
+C:\Users\Vince\Documents\aaa\Master_chef\Restaurant\Salle\obj\Debug\Salle.csprojAssemblyReference.cache
+C:\Users\Vince\Documents\aaa\Master_chef\Restaurant\Salle\obj\Debug\Salle.csproj.CoreCompileInputs.cache

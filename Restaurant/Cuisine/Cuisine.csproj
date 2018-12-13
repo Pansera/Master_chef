@@ -59,7 +59,8 @@
     <Compile Include="Model\Frigo.cs" />
     <Compile Include="Model\IchefCuisineFactory.cs" />
     <Compile Include="Model\ICuisine.cs" />
-    <Compile Include="Model\IIlngredient.cs" />
+    <Compile Include="Model\Ingredient.cs" />
+    <Compile Include="Model\InitBDD.cs" />
     <Compile Include="Model\IPostFixe.cs" />
     <Compile Include="Model\IStock.cs" />
     <Compile Include="Model\ITypeElement.cs" />
