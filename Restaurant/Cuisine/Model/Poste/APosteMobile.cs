@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Cuisine.Model
 {
-    class APosteMobile
+    public abstract class APosteMobile
     {
+        static int id = 0;
+        public static int Id { get => id; set => id = value; }
     }
 }

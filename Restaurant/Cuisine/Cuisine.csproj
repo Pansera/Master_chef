@@ -43,6 +43,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Élément\IElement.cs" />
+    <Compile Include="Model\Ingrédient\AIngredient.cs" />
+    <Compile Include="Model\Poste\APosteMobile.cs" />
+    <Compile Include="Model\Ingrédient\ChambreFroide.cs" />
+    <Compile Include="Model\Poste\ChefCuisine.cs" />
+    <Compile Include="Model\Poste\ChefPartie.cs" />
+    <Compile Include="Model\Élément\Evier.cs" />
+    <Compile Include="Model\Élément\Four.cs" />
+    <Compile Include="Model\Élément\Frigo.cs" />
+    <Compile Include="Model\Poste\APosteFixe.cs" />
+    <Compile Include="Model\Poste\Commis.cs" />
+    <Compile Include="Model\Ingrédient\Congelateur.cs" />
+    <Compile Include="Model\Ingrédient\Denrees.cs" />
+    <Compile Include="Model\Ingrédient\IStock.cs" />
+    <Compile Include="Model\Élément\LaveVaiselle.cs" />
+    <Compile Include="Model\Élément\MachineLaver.cs" />
+    <Compile Include="Model\Ingrédient\Plat.cs" />
+    <Compile Include="Model\Poste\Plongeur.cs" />
+    <Compile Include="Model\Ingrédient\Recette.cs" />
+    <Compile Include="Model\Élément\Poele.cs" />
+    <Compile Include="Model\Élément\Ustensiles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,7 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controler\" />
-    <Folder Include="Model\" />
     <Folder Include="Observer\" />
     <Folder Include="View\" />
   </ItemGroup>

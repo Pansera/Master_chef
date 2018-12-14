@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace Cuisine.Model
 {
-    class Four
+    public class Four : IElement
     {
+        private bool occuper;
+        private bool aLaver;
+
+        public Four()
+        {
+        }
+
+        public bool ALaver { get => aLaver; set => aLaver = value; }
+        public bool Occuper { get => occuper; set => occuper = value; }
+
+        public void Utiliser()
+        {
+            Console.WriteLine("Le four est en cours d'utilisation");
+        }
     }
 }
