@@ -20,7 +20,7 @@ namespace Salle
 
         public bool Tabledispo { get; set; }
 
-        public bool Tableservie { get; set; };
+        public bool Tableservie { get; set; }
 
         public ListTable LTB = new ListTable();
 

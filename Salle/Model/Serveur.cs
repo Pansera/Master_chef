@@ -9,7 +9,7 @@ namespace Salle
     class Serveur
     {
         private Table TB;
-        private ClientConcret CC = new ClientConcret();
+        private ClientConcret CC = new ClientConcret);
 
         public void Dresser(int idTable)
         {
@@ -18,20 +18,21 @@ namespace Salle
             Console.WriteLine("Le serveur à servie du pain et de l'eau à table n°" + idTable);
 
         }
+        public void Debarasser()
+        {
 
-        /*
-        public void chercherCommande(idTable)
+        }
+
+        
+        public void chercherCommande(int idTable)
         {
             List<Table> test = TB.GetTable4();
             test[idTable] = new Table() { Tableservie = true };
-            ClientConcret abc = new ClientConcret();
+            ClientConcret abc = new ClientConcret(idTable);
          }
                
 
-        public Table Debarasser()
-        {
-
-        }*/
+        
 
     }
 }

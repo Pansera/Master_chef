@@ -16,16 +16,16 @@ namespace Salle
         private int groupe;
         private Serveur SV ;
 
+        public int NbPersonne { get => nbPersonne; set => nbPersonne = value; }
+        public int Presence { get => presence; set => presence = value; }
+        public int Groupe { get => groupe; set => groupe = value; }
+
         public ClientConcret()
         {
             Thread abc = new Thread(() => Manger());
             abc.Start();
             abc.Abort();
         }
-
-        public int NbPersonne { get => nbPersonne; set => nbPersonne = value; }
-        public int Presence { get => presence; set => presence = value; }
-        public int Groupe { get => groupe; set => groupe = value; }
 
         public int Arriver()
         {
@@ -59,8 +59,8 @@ namespace Salle
 
         public void Manger()
         {
-            Thread.Sleep(2400000);
-            SV.Débarasser();
+            Thread.Sleep(24000);
+            SV.Debarasser();
 
         }
         /*public int Payer()

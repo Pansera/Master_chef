@@ -49,7 +49,8 @@ namespace Salle
             Console.WriteLine("Le chef de rang dépose " + donnerCarte + " cartes aux client à la table" + idTable);
             Thread.Sleep(5000);
             int com = CC.Commander();
-            string commande = com.ToString();
+            string recette = com.ToString();
+            commande = "" + idTable + "" + recette;
             this.TransmetCommande(commande);
             SV.Dresser(idTable);
             
