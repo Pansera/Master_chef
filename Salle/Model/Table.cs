@@ -33,39 +33,19 @@ namespace Salle
             return "ID: " + Id + "   Nombre de place: " + nbPlace + "    Pain = " + Pain + "    Eau = " + Eau + "    Table dispo = " + Tabledispo+"      Table servie = "+ Tableservie;
         }
 
-
-        public Table()
-        {
-          
-
-        }
-
+        
+        // Ici on récupère la table 4 place généré par ListTable
         public List<Table> GetTable4()
         {
             Quatre = LTB.Table4p();
             return Quatre;
         }
+        // Ici on récupère la table 8 place généré par ListTable
         public List<Table> GetTable8()
         {
             Huit = LTB.Table8p();
             return Huit;
         }
-
-
-        /*
-        
-        private Point position()
-        {
-
-        }
-
-
-
-        public getPosition()
-        {
-
-        }
-*/
 
     }
 }

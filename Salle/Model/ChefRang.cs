@@ -7,30 +7,26 @@ using System.Threading.Tasks;
 
 namespace Salle
 {
-    class ChefRang
+    public class ChefRang
     {
         //public MaitreHotel MH;
         //private List<Table> test;
-        private int nbPersonne;
+        
         private int carte = 40;
         private ClientConcret CC = new ClientConcret();
         public string commande;
         private Table TB = new Table();
         private Serveur SV = new Serveur();
-        
-
 
         public ChefRang(int idTable, int check)
         {
-            
-            int table = idTable;
-            check = nbPersonne;
+            // Un thread va donc être créer pour actionner une liste de méthode
             Thread abc = new Thread(() => {
-                AccompagneClient(table, nbPersonne);
-                PresentCarte(table, nbPersonne);
+                AccompagneClient(idTable, check);
+                PresentCarte(idTable, check);
                });
             abc.Start();
-            abc.Abort();
+            //abc.Abort();
 
         }
 
@@ -45,13 +41,19 @@ namespace Salle
         public void PresentCarte(int idTable, int check)
         {
             int donnerCarte = check / 2;
+            //Ici on divise par deux le nombre de client pour déterminer le nombre de carte
+            //qu'on va donner aux client. A ça, on soustrait le nombre total de carte aux carte qu'on va donner
+            // pour avoir un suivie des cartes
             this.Carte = this.Carte - donnerCarte;
             Console.WriteLine("Le chef de rang dépose " + donnerCarte + " cartes aux client à la table" + idTable);
+            // Là le chef de rang attend 5 min pour receptionner la commande
             Thread.Sleep(5000);
             int com = CC.Commander();
             string recette = com.ToString();
             commande = "" + idTable + "" + recette;
+            //On transmet la commande au chef de cuisine
             this.TransmetCommande(commande);
+            // Ici le serveur dresse la table
             SV.Dresser(idTable);
             
 

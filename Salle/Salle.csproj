@@ -45,10 +45,8 @@
   <ItemGroup>
     <Compile Include="Model\AfficherArgent.cs" />
     <Compile Include="Model\CaisseEnregistreuse.cs" />
-    <Compile Include="Model\Carte.cs" />
     <Compile Include="Model\ChefRang.cs" />
     <Compile Include="Model\ClientConcret.cs" />
-    <Compile Include="Model\Commande.cs" />
     <Compile Include="Model\CommisSalle.cs" />
     <Compile Include="Model\Createur.cs" />
     <Compile Include="Model\CreateurConcret.cs" />
@@ -57,7 +55,6 @@
     <Compile Include="Model\IObservateur.cs" />
     <Compile Include="Model\ListTable.cs" />
     <Compile Include="Model\MaitreHotel.cs" />
-    <Compile Include="Model\Personne.cs" />
     <Compile Include="Model\Serveur.cs" />
     <Compile Include="Model\Table.cs" />
     <Compile Include="Program.cs" />

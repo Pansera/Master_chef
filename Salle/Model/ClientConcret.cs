@@ -9,13 +9,11 @@ namespace Salle
 {
     public class ClientConcret : IClient
     {
-        private readonly bool reservation;
-        private readonly bool presser;
+        
         private int nbPersonne;
         private int presence;
         private int groupe;
-        private Serveur SV ;
-
+        //private Serveur SV = new Serveur() ;
         public int NbPersonne { get => nbPersonne; set => nbPersonne = value; }
         public int Presence { get => presence; set => presence = value; }
         public int Groupe { get => groupe; set => groupe = value; }
@@ -59,18 +57,7 @@ namespace Salle
 
         public void Manger()
         {
-            Thread.Sleep(24000);
-            SV.Debarasser();
 
         }
-        /*public int Payer()
-        {
-
-        }
-        
-
-        
-
-        */
     }
 }

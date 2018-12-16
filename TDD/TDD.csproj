@@ -49,8 +49,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ChefRangTests.cs" />
     <Compile Include="Model\ClientConcretTests.cs" />
     <Compile Include="Model\MaitreHotelTests.cs" />
+    <Compile Include="Model\ServeurTests.cs" />
     <Compile Include="Model\TableTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

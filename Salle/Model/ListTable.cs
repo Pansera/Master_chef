@@ -12,6 +12,7 @@ namespace Salle.Model
         public static List<Table> tables4p = new List<Table>();
         public static List<Table> tables8p = new List<Table>();
 
+        // Ici on génére les tables 4 places avec différent paramêtre qui sont dans la classe Table
         public List<Table> Table4p()
         {
             for (int i = 0; i < 10; i++)
@@ -21,6 +22,7 @@ namespace Salle.Model
             return tables4p;
 
         }
+        // Ici on génére les tables 8 places avec différent paramêtre qui sont dans la classe Table
         public List<Table> Table8p()
         {
 
