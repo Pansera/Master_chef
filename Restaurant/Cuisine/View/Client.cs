@@ -1,25 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using Cuisine.Observer;
+using System.Text;
+using System.Threading.Tasks;
+using Restaurant.Controler;
 
-namespace Cuisine.Controler
+namespace Restaurant
 {
 
-    class Client : Observable
+
+    class Client 
     {
         private const int port = 11000;
         public static Thread t1, t2;
-
+       
         public static Socket client = null;
-
-        public Client()
+        
+        
+        public Client() 
         {
+            //Demarre le client dans un nouveau Thread
             Thread newThread = new Thread(new ThreadStart(StartClient));
             newThread.Start();
         }
@@ -27,26 +28,24 @@ namespace Cuisine.Controler
 
         public void StartClient()
         {
-            // Connect to a remote device.  
+            //Ce connect au serveur 
             try
-            {
-                // Establish the remote endpoint for the socket.  
-                // The name of the   
-                // remote device is "host.contoso.com".  
+            {          
                 IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
                 IPAddress ipAddress = ipHostInfo.AddressList[0];
                 IPEndPoint remoteEP = new IPEndPoint(ipAddress, port);
 
 
-                // Create a TCP/IP socket.  
+                // Cree un socket TCP/IP.  
                 client = new Socket(ipAddress.AddressFamily,
                     SocketType.Stream, ProtocolType.Tcp);
+                
 
-
-                // Connect to the remote endpoint.  
+                // Connecte au serveur en lançant une tâche asychrone
                 client.BeginConnect(remoteEP,
                     new AsyncCallback(ConnectCallback), client);
-                Observable.WaitConnect();
+                // Attend la connexion
+                Observer.WaitConnect();
 
 
             }
@@ -61,17 +60,17 @@ namespace Cuisine.Controler
         {
             try
             {
-                // Retrieve the socket from the state object.  
+                //Récupère le socket  
                 Socket client = (Socket)ar.AsyncState;
 
-                // Complete the connection.  
+                // Complete la connexion.
                 client.EndConnect(ar);
 
                 Console.WriteLine("Socket connected to {0}",
                     client.RemoteEndPoint.ToString());
 
-                // Signal that the connection has been made.  
-                Observable.OnConnect();
+                // Signal la connexion 
+                Observer.OnConnect();
             }
             catch (Exception e)
             {
@@ -81,26 +80,26 @@ namespace Cuisine.Controler
 
         public void Send(string data)
         {
-            Observable.WaitConnect();
-            // Send test data to the remote device.  
-            t1 = new Thread(() => new EnvoiePlat(client, data));
+            Observer.WaitConnect();
+            //Envoie les plats
+            t1 = new Thread(() => new Emission(client, data));
             t1.Start();
-            Observable.WaitSend();
+            //Attend l'envoie
+            Observer.WaitSend();
 
         }
 
-        public void Receive()
+        public void Receive(AbstractControler controler)
         {
-            Observer.Observable.WaitConnect();
-            Observable.ResetReceive();
-            // Receive the response from the remote device. 
-            t2 = new Thread(() => new ReceptionCommande(client));
+            Observer.WaitConnect();
+            Observer.ResetReceive();
+            //Thread de reception des commandes
+            t2 = new Thread(() => new Reception(client, controler));
             t2.Start();
-            Observable.WaitReceive();
+            Observer.WaitReceive();
         }
 
-
-
+      
 
     }
 }

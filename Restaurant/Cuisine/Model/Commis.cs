@@ -1,17 +1,25 @@
-﻿using Cuisine.Observer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace Cuisine.Model
+namespace Restaurant.Model
 {
-    class Commis : IObservateur
+    class Commis 
     {
-        public void Notifier()
-        {
-            throw new NotImplementedException();
+
+        public Commis()
+        {   
+            Random rnd = new Random();
+            int num = rnd.Next(1000);
+            string myString = num.ToString();
         }
+
+           
+        
     }
+    
+    
 }
