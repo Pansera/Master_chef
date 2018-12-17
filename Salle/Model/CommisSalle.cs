@@ -4,12 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cuisine
+namespace Salle
 {
-    class Program
+    class CommisSalle
     {
-        static void Main(string[] args)
+
+        /*public metlaTable()
         {
+
         }
+
+        public sertPainetEau()
+        {
+
+        }*/
+
     }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7F3B0F75-1777-459B-BD8D-86A2D3A85433}</ProjectGuid>
+    <ProjectGuid>{968C35BE-968E-422B-9401-5C7A9216401A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Salle</RootNamespace>
     <AssemblyName>Salle</AssemblyName>
@@ -43,34 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NewFolder1\AfficherArgent.cs" />
-    <Compile Include="NewFolder1\CaisseEnregistreuse.cs" />
-    <Compile Include="NewFolder1\Carte.cs" />
-    <Compile Include="NewFolder1\ChefRang.cs" />
-    <Compile Include="NewFolder1\ClientConcret.cs" />
-    <Compile Include="NewFolder1\Commande.cs" />
-    <Compile Include="NewFolder1\CommisSalle.cs" />
-    <Compile Include="NewFolder1\Createur.cs" />
-    <Compile Include="NewFolder1\CreateurConcret.cs" />
-    <Compile Include="NewFolder1\IClient.cs" />
-    <Compile Include="NewFolder1\IObservable.cs" />
-    <Compile Include="NewFolder1\IObservateur.cs" />
-    <Compile Include="NewFolder1\MaitreHotel.cs" />
-    <Compile Include="NewFolder1\Personne.cs" />
-    <Compile Include="NewFolder1\Program.cs" />
-    <Compile Include="NewFolder1\Serveur.cs" />
-    <Compile Include="NewFolder1\Table.cs" />
+    <Compile Include="Model\AfficherArgent.cs" />
+    <Compile Include="Model\CaisseEnregistreuse.cs" />
+    <Compile Include="Model\ChefRang.cs" />
+    <Compile Include="Model\ClientConcret.cs" />
+    <Compile Include="Model\CommisSalle.cs" />
+    <Compile Include="Model\Createur.cs" />
+    <Compile Include="Model\CreateurConcret.cs" />
+    <Compile Include="Model\IClient.cs" />
+    <Compile Include="Model\IObservable.cs" />
+    <Compile Include="Model\IObservateur.cs" />
+    <Compile Include="Model\ListTable.cs" />
+    <Compile Include="Model\MaitreHotel.cs" />
+    <Compile Include="Model\Serveur.cs" />
+    <Compile Include="Model\Table.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Cuisine\Cuisine.csproj">
-      <Project>{f9d27d49-f8f9-4477-afea-0f152454b422}</Project>
-      <Name>Cuisine</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

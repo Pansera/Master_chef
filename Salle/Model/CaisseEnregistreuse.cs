@@ -4,12 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cuisine
+namespace Salle
 {
-    class Program
+    class CaisseEnregistreuse
     {
-        static void Main(string[] args)
+
+        /*private int argent()
         {
+
         }
-    }
+
+        public prendArgent()
+        {
+
+        }*/
+
+}
 }

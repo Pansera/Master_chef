@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cuisine
+namespace Salle
 {
-    class Program
+    interface IObservateur
     {
-        static void Main(string[] args)
+        /*public notify()
         {
-        }
+        }*/
     }
 }

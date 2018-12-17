@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cuisine
+namespace Salle
 {
-    class Program
+    class CreateurConcret
     {
-        static void Main(string[] args)
+
+        /*public FactoryMethod()
         {
-        }
+
+        }*/
+
     }
 }
