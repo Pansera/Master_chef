@@ -1,18 +1,22 @@
 ﻿using System;
-using System.Net;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Sockets;
-using System.Threading;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace Restaurant
+namespace Salle
 {
-    class Emission
+    class Emmission
     {
-
         // ManualResetEvent instances signal completion.  
+
         private Socket client;
         private String data;
-        public Emission(Socket client, String data)
+
+
+        public Emmission(Socket client, String data)
         {
             Console.WriteLine("Sending...");
             this.data = data;
@@ -21,12 +25,14 @@ namespace Restaurant
             newThread.Start();
         }
 
+
+
         public void Send()
         {
-            //Converti le string
+            // Convert the string data to byte data using ASCII encoding.  
             byte[] byteData = Encoding.ASCII.GetBytes(data);
 
-            // Envoie les données 
+            // Begin sending the data to the remote device.  
             client.BeginSend(byteData, 0, byteData.Length, 0,
                 new AsyncCallback(SendCallback), client);
         }
@@ -35,22 +41,20 @@ namespace Restaurant
         {
             try
             {
-                //Récupère le socket 
+                // Retrieve the socket from the state object.  
                 Socket client = (Socket)ar.AsyncState;
 
-                // Complete l'envoie 
+                // Complete sending the data to the remote device.  
                 int bytesSent = client.EndSend(ar);
                 Console.WriteLine("Sent {0} bytes to server.", bytesSent);
 
-                // Signal l'envoie
-                Observer.OnSend();
+                // Signal that all bytes have been sent.  
+                StateObject.OnSend();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
             }
         }
-
-
     }
 }

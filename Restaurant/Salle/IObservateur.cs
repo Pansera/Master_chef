@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cuisine.Model
+namespace Salle
 {
-    class Plongeur 
+    public interface IObservateur
     {
+
+        void Notifier(String str);
+
       
     }
 }

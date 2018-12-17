@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Text;
-using SocketTest.View;
+using Restaurant.View;
 using Restaurant.Controler;
 
 namespace Restaurant
