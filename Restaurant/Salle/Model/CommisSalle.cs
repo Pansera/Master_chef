@@ -9,12 +9,12 @@ namespace Salle
     class CommisSalle
     {
 
-        public metlaTable()
+        public void metlaTable()
         {
 
         }
 
-        public sertPainetEau()
+        public void sertPainetEau()
         {
 
         }

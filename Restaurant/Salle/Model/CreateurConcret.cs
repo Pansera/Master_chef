@@ -9,7 +9,7 @@ namespace Salle
     class CreateurConcret
     {
 
-        public FactoryMethod()
+        public void FactoryMethod()
         {
 
         }

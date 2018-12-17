@@ -21,17 +21,17 @@ namespace Salle
 
         }
 
-        public AppelIChefRang()
+        public void AppelIChefRang()
         {
 
         }
 
-        public VerifieTableDisponible()
+        public void VerifieTableDisponible()
         {
 
         }
 
-        public AttribueTable()
+        public void AttribueTable()
         {
             int var = CheckClient();
             if(var < 1)
@@ -43,7 +43,7 @@ namespace Salle
         
         public int GetPosition()
         {
-
+            return 0;
         }
 
         private MaitreHotel()
@@ -51,10 +51,10 @@ namespace Salle
 
         }
 
-        public MaitreHotel GetInstance()
+        /*public MaitreHotel GetInstance()
         {
-
-        }
+            
+        }*/
 
     }
 }

@@ -43,21 +43,26 @@ namespace Salle
         }
         public int Payer()
         {
-
+            return 0;
         }
-        public Commander()
+        public void Commander()
         {
 
         }
 
-        public Manger()
+        public void Manger()
         {
 
         }
 
-        public Assoir()
+        public void Assoir()
         {
 
+        }
+
+        void IClient.Payer()
+        {
+            throw new NotImplementedException();
         }
     }
 }

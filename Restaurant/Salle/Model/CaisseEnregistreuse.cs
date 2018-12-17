@@ -9,12 +9,12 @@ namespace Salle
     class CaisseEnregistreuse
     {
 
-        private int argent()
+        private void argent()
         {
 
         }
 
-        public prendArgent()
+        public void prendArgent()
         {
 
         }

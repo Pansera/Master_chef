@@ -11,7 +11,7 @@ namespace Salle
         private int id;
         //private Point position;
 
-        public creerID()
+        public void creerID()
         {
 
         }
@@ -21,7 +21,7 @@ namespace Salle
 
         }*/
 
-        public getPosition()
+        public void getPosition()
         {
 
         }

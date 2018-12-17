@@ -8,24 +8,24 @@ namespace Salle
 {
     class ChefRang
     {
-        public AccompagneClient()
+        public void AccompagneClient()
         {
 
         }
 
-        public Dressetable()
+        public void Dressetable()
         {
 
         }
-        public presentCarte()
+        public void presentCarte()
         {
 
         }
-        public transmetCommande()
+        public void transmetCommande()
         {
 
         }
-        public attendAppel()
+        public void attendAppel()
         {
 
         }

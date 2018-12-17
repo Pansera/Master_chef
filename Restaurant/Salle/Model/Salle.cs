@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Salle
+namespace Salle.Model
 {
-    class Program
+    class Salle : AbstractModel
     {
-        static void Main(string[] args)
+        public Salle()
         {
             List<Table> tables4p = new List<Table>();
             List<Table> tables8p = new List<Table>();
@@ -20,6 +20,11 @@ namespace Salle
             {
                 tables8p.Add(new Table() { Id = i, nbPlace = 8, Eau = false, Pain = false });
             }
+        }
+
+        public override void getCommande(string result)
+        {
+            throw new NotImplementedException();
         }
     }
 }

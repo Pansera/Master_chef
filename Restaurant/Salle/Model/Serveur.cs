@@ -9,25 +9,25 @@ namespace Salle
     class Serveur
     {
 
-        private int numCarre()
+        private int NumCarre()
+        {
+            return 0;
+        }
+
+        public void chercherCommande()
         {
 
         }
 
-        public chercherCommande()
+        /*public Table deposerPlat()
         {
-
-        }
-
-        public Table deposerPlat()
-        {
-
+            
         }
 
         public Table debarasse()
         {
 
-        }
+        }*/
 
     }
 }
