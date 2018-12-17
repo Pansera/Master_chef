@@ -1,37 +1,29 @@
 ﻿using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Cuisine.Observer
+namespace Salle
 {
-    class Observable 
+    public class Observer
     {
-        // Client socket.  
-        public Socket workSocket = null;
-        // Size of receive buffer.  
-        public const int BufferSize = 256;
-        // Receive buffer.  
-        public byte[] buffer = new byte[BufferSize];
-        // Received data string.  
-        public StringBuilder sb = new StringBuilder();
+       
 
-        
         private List<IObservateur> m_observateurs;
 
-        public Observable()
+        public Observer()
         {
             m_observateurs = new List<IObservateur>();
         }
 
-        public void notifierObservateurs()
+        public void notifierObservateurs(String str)
         {
             foreach (IObservateur observateur in m_observateurs)
             {
-                observateur.Notifier();
+                observateur.Notifier(str);
             }
         }
 
@@ -45,12 +37,13 @@ namespace Cuisine.Observer
             m_observateurs.Remove(observateur);
         }
 
-
-
         // ManualResetEvent instances signal completion.  
-        private static ManualResetEvent connectDone = new ManualResetEvent(false);
-        private static ManualResetEvent sendDone = new ManualResetEvent(false);
-        private static ManualResetEvent receiveDone = new ManualResetEvent(false);
+        private static ManualResetEvent connectDone =
+                new ManualResetEvent(false);
+        private static ManualResetEvent sendDone =
+            new ManualResetEvent(false);
+        private static ManualResetEvent receiveDone =
+            new ManualResetEvent(false);
 
         public static void OnSend()
         {

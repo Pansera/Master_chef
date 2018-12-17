@@ -1,17 +1,13 @@
-﻿using Cuisine.Observer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cuisine.Model
+namespace Restaurant.Model
 {
-    class ChefPartie : IObservateur
+    class ChefPartie 
     {
-        public void Notifier()
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

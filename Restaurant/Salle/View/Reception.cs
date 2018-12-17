@@ -1,5 +1,4 @@
-﻿using Cuisine.Observer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
@@ -7,24 +6,22 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Cuisine.Controler
+namespace Salle
 {
-    class ReceptionCommande
+    class Reception
     {
-
         // ManualResetEvent instances signal completion.  
-
+        
         private Socket client;
         private String data;
         // The response from the remote device.  
         private static String response = String.Empty;
 
-        public ReceptionCommande(Socket client)
+        public Reception(Socket client)
         {
-            Observable.ResetReceive();
             Console.WriteLine("Reciving");
             this.client = client;
-
+            
             Thread newThread = new Thread(new ThreadStart(this.Receive));
             newThread.Start();
         }
@@ -36,13 +33,13 @@ namespace Cuisine.Controler
             try
             {
 
-
+                
                 // Create the state object.  
-                Observable state = new Observable();
+                StateObject state = new StateObject();
                 state.workSocket = client;
 
                 // Begin receiving the data from the remote device.  
-                client.BeginReceive(state.buffer, 0, Observable.BufferSize, 0,
+                client.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
                     new AsyncCallback(ReadCallback), state);
             }
             catch (Exception e)
@@ -58,7 +55,7 @@ namespace Cuisine.Controler
 
             // Retrieve the state object and the handler socket  
             // from the asynchronous state object.  
-            Observable state = (Observable)ar.AsyncState;
+            StateObject state = (StateObject)ar.AsyncState;
             Socket handler = state.workSocket;
 
             // Read data from the client socket.   
@@ -81,13 +78,13 @@ namespace Cuisine.Controler
                         content.Length, content);
 
                     // Echo the data back to the client.  
-                    Observable.OnReceive();
+                    StateObject.OnReceive();
                     //Send(handler, content);
                 }
                 else
                 {
                     // Not all data received. Get more.  
-                    handler.BeginReceive(state.buffer, 0, Observable.BufferSize, 0,
+                    handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
                     new AsyncCallback(ReadCallback), state);
                 }
             }

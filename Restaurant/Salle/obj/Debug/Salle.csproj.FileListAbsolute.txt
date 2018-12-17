@@ -1,0 +1,7 @@
+D:\Document\Code\C#\Projet Master Chef\Master_chef\Master_chef\Restaurant\Salle\obj\Debug\Salle.csprojAssemblyReference.cache
+D:\Document\Code\C#\Projet Master Chef\Master_chef\Master_chef\Restaurant\Salle\obj\Debug\Salle.csproj.CoreCompileInputs.cache
+D:\Document\Code\C#\Projet Master Chef\Master_chef\Master_chef\Restaurant\Salle\bin\Debug\Salle.exe.config
+D:\Document\Code\C#\Projet Master Chef\Master_chef\Master_chef\Restaurant\Salle\bin\Debug\Salle.exe
+D:\Document\Code\C#\Projet Master Chef\Master_chef\Master_chef\Restaurant\Salle\bin\Debug\Salle.pdb
+D:\Document\Code\C#\Projet Master Chef\Master_chef\Master_chef\Restaurant\Salle\obj\Debug\Salle.exe
+D:\Document\Code\C#\Projet Master Chef\Master_chef\Master_chef\Restaurant\Salle\obj\Debug\Salle.pdb

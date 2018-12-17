@@ -1,23 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Net;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using Cuisine.Observer;
+using System.Text;
 
-namespace Cuisine.Controler
+namespace Restaurant
 {
-    class EnvoiePlat
+    class Emission
     {
-        // ManualResetEvent instances signal completion.  
 
+        // ManualResetEvent instances signal completion.  
         private Socket client;
         private String data;
-
-
-        public EnvoiePlat(Socket client, String data)
+        public Emission(Socket client, String data)
         {
             Console.WriteLine("Sending...");
             this.data = data;
@@ -26,14 +21,12 @@ namespace Cuisine.Controler
             newThread.Start();
         }
 
-
-
         public void Send()
         {
-            // Convert the string data to byte data using ASCII encoding.  
+            //Converti le string
             byte[] byteData = Encoding.ASCII.GetBytes(data);
 
-            // Begin sending the data to the remote device.  
+            // Envoie les données 
             client.BeginSend(byteData, 0, byteData.Length, 0,
                 new AsyncCallback(SendCallback), client);
         }
@@ -42,21 +35,22 @@ namespace Cuisine.Controler
         {
             try
             {
-                // Retrieve the socket from the state object.  
+                //Récupère le socket 
                 Socket client = (Socket)ar.AsyncState;
 
-                // Complete sending the data to the remote device.  
+                // Complete l'envoie 
                 int bytesSent = client.EndSend(ar);
                 Console.WriteLine("Sent {0} bytes to server.", bytesSent);
 
-                // Signal that all bytes have been sent.  
-                Observable.OnSend();
+                // Signal l'envoie
+                Observer.OnSend();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
             }
         }
+
 
     }
 }

@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Restaurant
+namespace SocketTest.Model
 {
-    public interface IObservateur
+    class Cuisinier
     {
-
-        void Notifier(String str);
-
-      
     }
 }
