@@ -1,0 +1,6 @@
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Cuisine\bin\Debug\Cuisine.exe.config
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Cuisine\bin\Debug\Cuisine.exe
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Cuisine\bin\Debug\Cuisine.pdb
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Cuisine\obj\Debug\Cuisine.csproj.CoreCompileInputs.cache
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Cuisine\obj\Debug\Cuisine.exe
+C:\Users\Arthur Wolff Exia\source\repos\Master_chef\Cuisine\obj\Debug\Cuisine.pdb
